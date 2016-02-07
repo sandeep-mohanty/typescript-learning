@@ -47,7 +47,7 @@ gulp.task("ntscompile", function(){
 
 // Watch source folders for change in source code
 gulp.task("watch", function(){
-	gulp.watch(["src/*.ts"], ["ntscompile"]);
+	gulp.watch(["src/*.ts"], ["clean","ntscompile"]);
 	console.log("\nI'm watching the source folder now for code changes !");
 });
 

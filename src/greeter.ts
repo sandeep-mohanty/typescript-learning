@@ -1,4 +1,5 @@
-var greeter = (person) => "Hello, " + person;
+var greeter = function(person: string) : string { return "Hello, " + person; };
 
-var user = "Jane";
+var user: string = "Jane";
+
 console.log(greeter(user));
