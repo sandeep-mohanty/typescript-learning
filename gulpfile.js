@@ -8,10 +8,9 @@ var merge = require("merge2"); // Merge module (note: 'merge2' module which supp
 var sourcemaps = require("gulp-sourcemaps"); // Gulp plug-in to generate source maps
 var exec = require("child_process").exec; // Need a child process executor to run a command
 
-
 // Cleaning task
 gulp.task("clean",function(){
-	del(["./dest"], function(){
+	del(["./dest/*"], function(){
 		console.log("Clean task complete !");
 	});
 });
@@ -47,20 +46,30 @@ gulp.task("ntscompile", function(){
 
 // Running compiled code
 gulp.task("run", function(){
-	exec("node dest/greeter.js", function(err,output){
-		if (err) {
-			console.log(err);
-		} else {
-			console.log("Program ran successfully! \n");
-			console.log("Here's the output: \n\n");
-			console.log(output);
+	
+	// Run only if the compiled output is available
+	fs.exists("dest/greeter.js", function(exists) {
+
+		if (exists) {
+			exec("node dest/greeter.js", function(err,output){
+				if (err) {
+					console.log(err);
+				} else {
+					console.log("Program ran successfully! \n");
+					console.log("Here's the output: \n\n");
+					console.log(output);
+				}
+			});			
 		}
+
 	});
+
 });
 
 // Watch source folders for change in source code
 gulp.task("watch", function(){
 	gulp.watch(["src/*.ts"], ["clean","ntscompile"]);
+	gulp.watch(["dest/*.js"], ["run"]);
 	console.log("\nI'm watching the source folder now for code changes !");
 });
 
