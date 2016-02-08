@@ -9,6 +9,7 @@
   "author": "Sandeep Mohanty",
   "license": "MIT",
   "devDependencies": {
+    "clear": "0.0.1",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",

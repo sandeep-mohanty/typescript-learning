@@ -7,6 +7,7 @@ var del = require("del"); // Delete module
 var merge = require("merge2"); // Merge module (note: 'merge2' module which supports multiple streams)
 var sourcemaps = require("gulp-sourcemaps"); // Gulp plug-in to generate source maps
 var exec = require("child_process").exec; // Need a child process executor to run a command
+var clear = require("clear"); // Console clear module
 
 // Cleaning task
 gulp.task("clean",function(){
@@ -51,12 +52,15 @@ gulp.task("run", function(){
 	fs.exists("dest/greeter.js", function(exists) {
 
 		if (exists) {
+
 			exec("node dest/greeter.js", function(err,output){
+
+				clear();
 				if (err) {
 					console.log(err);
 				} else {
-					console.log("Program ran successfully! \n");
-					console.log("Here's the output: \n\n");
+					console.log("Program ran successfully!");
+					console.log("Here's the output: \n");
 					console.log(output);
 				}
 			});			
