@@ -45,6 +45,19 @@ gulp.task("ntscompile", function(){
 
 });
 
+// Running compiled code
+gulp.task("run", function(){
+	exec("node dest/greeter.js", function(err,output){
+		if (err) {
+			console.log(err);
+		} else {
+			console.log("Program ran successfully! \n");
+			console.log("Here's the output: \n\n");
+			console.log(output);
+		}
+	});
+});
+
 // Watch source folders for change in source code
 gulp.task("watch", function(){
 	gulp.watch(["src/*.ts"], ["clean","ntscompile"]);
