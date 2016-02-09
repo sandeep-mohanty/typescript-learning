@@ -46,15 +46,14 @@ gulp.task("ntscompile", function(){
 gulp.task("run", function(){
 	
 	// Execute program only if the compiled output is available
-	fs.exists("dest/greeter.js", function(exists) {
+	fs.exists("dest/main.js", function(exists) {
 		if (exists) {
-			exec("node dest/greeter.js", function(err,output){
+			exec("node dest/main.js", function(err,output){
 				clear();
 				if (err) {
 					console.log(err);
 				} else {
-					console.log("Program ran successfully !");
-					console.log("Here's the output: \n");
+					console.log("\nHere's the output: \n");
 					console.log(output);
 				}
 			});			
