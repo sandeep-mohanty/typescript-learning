@@ -1,24 +1,44 @@
-class Language {
-    static defaultName: string = "Unknown";
-    private name: string;
+enum Lang {
+     C,
+     Haskell,
+     Scala,
+     Clojure,
+      Unknown,
+     Fortran
+}
 
-    constructor(name: string) {
+class Language {
+    static defaultName: Lang = Lang[4];
+    private name: Lang;
+    private description: string = " is a programming language !"
+
+    constructor(name: Lang = Lang[5], description) {
         this.name = name || Language.defaultName;
+        if (description) this.description = description;
     }
 
-    getName(): string { return this.name }
+    getName(): Lang { return this.name }
+    getDescription(): string { return this.description}
 }
 
 class FunctionalLanguage extends Language {
-    constructor(name: string) {
-        super(name);
+    constructor(name: Lang = Lang[2], description: string) {
+        super(name, description);
     }
 
-    getName(): string { return "Functional Language: " + super.getName(); }
+    getName(): Lang { return super.getName(); }
 }
 
+var p1 = new Language();
+var p2 = new FunctionalLanguage();
+var p3 = new Language(Lang[0]," belongs to the family of imperative programming languages.");
+var p4 = new FunctionalLanguage(Lang[1], " belongs to the family of functional programming languages.");
 
-var p1 = new Language("C");
-var p2 = new FunctionalLanguage("Haskell");
-console.log("Proceduaral Language: " + p1.getName() + " !");
-console.log(p2.getName() + " !");
+//console.log("Proceduaral Language: " + p1.getName() + " !");
+console.log(`${p1.getName()}${p1.getDescription()}`);
+//console.log(p2.getName() + " !");
+console.log(`${p2.getName()}${p2.getDescription()}`);
+//console.log("Proceduaral Language: " + p3.getName() + " !");
+console.log(`${p3.getName()}${p3.getDescription()}`);
+//console.log(p4.getName() + " !");
+console.log(`${p4.getName()}${p4.getDescription()}`);

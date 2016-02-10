@@ -45,6 +45,7 @@ gulp.task("ntscompile", function(){
 // Running compiled code whenever available
 gulp.task("run", function(){
 	
+	console.log("Started run task !");
 	// Execute program only if the compiled output is available
 	fs.exists("dest/main.js", function(exists) {
 		if (exists) {
