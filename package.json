@@ -16,5 +16,10 @@
     "gulp-typescript": "^2.10.0",
     "merge2": "^1.0.1",
     "ntypescript": "^1.201602042220.1"
+  },
+  "scripts":{
+    "build": "gulp ntscompile",
+    "clean": "gulp clean",
+    "start": "gulp"
   }
 }
