@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "commonjs",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "rootDir": "src",
-    "outDir": "dest",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "rootDir": "./src",
+    "outDir": "./dest",
     "sourceMap": true,
     "declaration": true
   },

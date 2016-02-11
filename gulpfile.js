@@ -32,12 +32,13 @@ gulp.task("tscompile", function(){
 
 // Compiling Typescript files task using 'ntypescript'
 gulp.task("ntscompile", function(){
-	exec("ntsc", function(err){
-		console.log("NTSC command executed");
+	exec("ntsc", function(err, message, stderr){
+		clear();
 		if (err) {
-			console.log("Error: " + err);
+			console.log("\nCompile time error(s) found in the source code:\n");
+			console.log(message);
 		} else {
-			console.log("No errors. Everything OK!")
+			console.log("\nCongratulations! Compilation successful with no error.\n");
 		}
 	});
 });
@@ -47,14 +48,13 @@ gulp.task("run", function(){
 	
 	console.log("Started run task !");
 	// Execute program only if the compiled output is available
-	fs.exists("dest/main.js", function(exists) {
+	fs.exists("dest/submain.js", function(exists) {
 		if (exists) {
-			exec("node dest/main.js", function(err,output){
-				clear();
+			exec("node dest/submain.js", function(err,output){
 				if (err) {
 					console.log(err);
 				} else {
-					console.log("\nHere's the output: \n");
+					console.log("\nFinished executing the generated Javascript files. Here's the console output of the execution: \n");
 					console.log(output);
 				}
 			});			
@@ -65,7 +65,7 @@ gulp.task("run", function(){
 // Watch source folders for change in source code
 gulp.task("watch", function(){
 	gulp.watch(["src/*.ts"], ["clean","ntscompile"]);
-	gulp.watch(["dest/*.js"], ["run"]);
+	gulp.watch(["dest/submain.js"], ["run"]);
 	console.log("\nI'm watching the source folder now for code changes !");
 });
 
