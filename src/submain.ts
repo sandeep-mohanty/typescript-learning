@@ -9,8 +9,8 @@ class FunctionalLanguage extends Language {
     getName(): string { return super.getName(); }
 }
 
-var p1: Language = new Language();
-var p2: Language = new FunctionalLanguage();
+var p1: Language = new Language("Fortran", " is an old programming language.");
+var p2: Language = new FunctionalLanguage("Scala", " is a programming language that runs on the java virtual machine environment.");
 var p3: Language = new Language(Lang[0]," belongs to the family of imperative programming languages.");
 var p4: Language = new FunctionalLanguage(Lang[1], " belongs to the family of functional programming languages.");
 
