@@ -21,5 +21,7 @@ export class Language {
         return this.name;
     }
 
-    getDescription(): string { return this.description}
+    getDescription(): string {
+        return this.description;
+    }
 }
