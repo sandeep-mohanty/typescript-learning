@@ -8,12 +8,12 @@ export enum Lang {
 }
 
 export class Language {
-    static defaultName: string = Lang[4];
-    private name: string;
+
+    private name: string = "Fortran";
     private description: string = " is a programming language !";
 
-    constructor(name: string = Lang[5], description: string) {
-        this.name = name || Language.defaultName;
+    constructor(name ?: string , description ?: string) {
+        if (name) this.name = name;
         if (description) this.description = description;
     }
 
