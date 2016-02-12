@@ -4,22 +4,22 @@
   "description": "This is a sample application to learn programming using typescript transpiler",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp ntscompile",
+    "clean": "gulp clean",
+    "start-server": "node server.js",
+    "launch-browser": "start chrome http://localhost:80",
+    "start": "npm run launch-browser && npm run start-server"
   },
   "author": "Sandeep Mohanty",
   "license": "MIT",
   "devDependencies": {
     "clear": "0.0.1",
     "del": "^2.2.0",
+    "express": "^4.13.4",
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.10.0",
     "merge2": "^1.0.1",
     "ntypescript": "^1.201602042220.1"
-  },
-  "scripts":{
-    "build": "gulp ntscompile",
-    "clean": "gulp clean",
-    "start": "gulp"
   }
 }
