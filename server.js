@@ -25,6 +25,7 @@ var getServerIp = function() {
 		
 	}
 };
+
 var ipaddress = getServerIp() || "localhost";
 
 // Here we will define and invoke an IIFE function which would create a http server to serve a static index.html file.
