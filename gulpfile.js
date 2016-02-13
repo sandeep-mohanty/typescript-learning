@@ -38,7 +38,8 @@ gulp.task("ntscompile", function(){
 			console.log("\nCompile time error(s) found in the source code:\n");
 			console.log(message);
 		} else {
-			console.log("\nCongratulations! Compilation successful with no error.\n");
+			console.log("\nCongratulations! Compilation successful with no error(s).\n");
+			console.log("Following file paths are in the build path: \n")
 			console.log(message);
 		}
 	});

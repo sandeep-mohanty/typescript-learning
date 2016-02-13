@@ -11,7 +11,7 @@ class FunctionalLanguage extends Language {
 }
 
 var p1: Language = new Language();
-var p2: Language = new FunctionalLanguage();
+var p2: Language = new FunctionalLanguage("Julia");
 var p3: Language = new Language(Lang[0]," belongs to the family of imperative programming languages.");
 var p4: Language = new FunctionalLanguage(Lang[1], " belongs to the family of functional programming languages.");
 
