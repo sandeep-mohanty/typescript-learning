@@ -1,5 +1,4 @@
-import {Lang} from "./main";
-import {Language} from "./main";
+import {Lang, Language} from "./main";
 
 class FunctionalLanguage extends Language {
     constructor(name ?: string , description ?: string) {

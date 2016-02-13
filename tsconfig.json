@@ -8,7 +8,8 @@
     "outDir": "./dest",
     "sourceMap": true,
     "declaration": true,
-    "noLib": false
+    "noLib": false,
+    "listFiles": true
   },
   "exclude": [
     "node_modules"
