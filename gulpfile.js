@@ -39,7 +39,7 @@ gulp.task("ntscompile", function(){
 			console.log(message);
 		} else {
 			console.log("\nCongratulations! Compilation successful with no error(s).\n");
-			console.log("Following file paths are in the build path: \n")
+			console.log("Following files were in the build path: \n")
 			console.log(message);
 		}
 	});
@@ -56,7 +56,7 @@ gulp.task("run", function(){
 				if (err) {
 					console.log(err);
 				} else {
-					console.log("\nFinished executing the generated Javascript files. Here's the console output of the execution: \n");
+					console.log("\nFinished executing the application. Here's the console output of the execution: \n");
 					console.log(output);
 				}
 			});			
