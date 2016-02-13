@@ -1,5 +1,7 @@
 import {Lang, Language} from "./main";
+import os = require('os');
 
+console.log("This application is running on the host: "  + os.hostname() + " \n");
 class FunctionalLanguage extends Language {
     constructor(name ?: string , description ?: string) {
         super(name, description);

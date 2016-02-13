@@ -4,14 +4,15 @@
     "module": "commonjs",
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
-    "rootDir": "./src",
-    "outDir": "./dest",
+    "rootDir": "src",
+    "outDir": "dest",
     "sourceMap": true,
     "declaration": true,
     "noLib": false,
     "listFiles": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "typings"
   ]
 }

@@ -39,6 +39,7 @@ gulp.task("ntscompile", function(){
 			console.log(message);
 		} else {
 			console.log("\nCongratulations! Compilation successful with no error.\n");
+			console.log(message);
 		}
 	});
 });
