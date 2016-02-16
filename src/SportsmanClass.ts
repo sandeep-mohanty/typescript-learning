@@ -1,5 +1,5 @@
 import {Person} from "./PersonInterface";
-class Sportsman implements Person {
+export class Sportsman implements Person {
     name: string;
     age: number;
     sex: string;
@@ -10,8 +10,8 @@ class Sportsman implements Person {
         if (name) this.name = name || "Unknown";
         if (age) this.age = age || undefined;
         if (sex) this.sex = sex || "Unknown";
-        this.retired = retired;
-        if (sport) this.sport = sport;
+        this.retired = retired || false;
+        if (sport) this.sport = sport || "Unknown Sport";
     }
 
     getName(): string {
@@ -54,10 +54,3 @@ class Sportsman implements Person {
         this.sport = sport;
     }
 }
-
-var person: Sportsman= new Sportsman("A.B. Devillers", 32, "Male", "Cricket", false);
-console.log("\n" + person.getName() + " Details:\n");
-console.log(`Age: ${person.getAge()}
-Sex: ${person.getSex()}
-Sport: ${person.getSport()}
-Retired: ${person.getRetired()}`);
